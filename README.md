@@ -2,10 +2,10 @@ This is a repository for the Udacity Sensor Fusion Nano Degree projects
 that I have been worked on during the learning. 
 
 There are 4 projects:
-$> Lidar Obstacle Detection
-$> Lidar Camera Fusion on Total Time to Collide
-$> Radar Target Detection
-$> Unscented Kalman Filter Estimation
+* Lidar Obstacle Detection
+* Lidar Camera Fusion on Total Time to Collide
+* Radar Target Detection
+* Unscented Kalman Filter Estimation
 
 Dependencies: 
 Point Cloud Library PCL 1.8 https://pointclouds.org/downloads/ (PCL 1.11 might fail with VTK)

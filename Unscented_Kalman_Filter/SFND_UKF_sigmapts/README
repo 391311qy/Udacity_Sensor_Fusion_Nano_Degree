@@ -1,0 +1,5 @@
+This part is for demostration of calculation on sigma points for UKF. 
+It also includes an augmentation step, prediction step.
+
+to compile:
+g++ -I /usr/include/eigen3/Eigen/ ukf.cpp main.cpp -o  program

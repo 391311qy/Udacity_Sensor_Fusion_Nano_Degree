@@ -1,0 +1,8 @@
+*.weights
+/Unscented_Kalman_Filter/SFND_Unscented_Kalman_Filter-master/src/Eigen
+/Camera_Lidar_3D_Object_tracking/SFND_Camera
+/Camera_Lidar_3D_Object_tracking/SFND_CompVision
+/Camera_Lidar_3D_Object_tracking/SFND_NMS
+/Camera_Lidar_3D_Object_tracking/SNFD_cluster_with_roi
+/Camera_Lidar_3D_Object_tracking/SNFD_YOLO
+/Camera_Lidar_3D_Object_tracking/SFND_Lidar_to_Camera

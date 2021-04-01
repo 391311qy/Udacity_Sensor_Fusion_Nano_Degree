@@ -1,0 +1,66 @@
+FMCW Waveform Design
+
+CRITERIA
+MEETS SPECIFICATIONS
+Using the given system requirements, design
+a FMCW waveform. Find its Bandwidth (B), chirp time (Tchirp) and slope of the chirp.
+
+For given system requirements the calculated slope should be around 2e13
+
+=======
+Answer:
+Bandwidth B is found to be 1.5e8 Hz = c / (2* res)
+Tchirp here is found to be 7.33e-6 s
+slope = 2.0455e13.
+=======
+
+Simulation Loop
+
+CRITERIA
+MEETS SPECIFICATIONS
+Simulate Target movement and calculate the beat or mixed signal for every timestamp.
+
+A beat signal should be generated such that once range FFT implemented, it gives the correct range i.e the initial position of target assigned with an error margin of +/- 10 meters.
+
+=======
+Answer:
+The mix signal is the elementwise multiplication bY Tx and Rx. Here the calculation of range is by range: displacement = velocity * time, and the time delay is calculated as the time of light traversal for a round trip to target. 2* rt /c. Initial velocity is defined to be +15m/s and target initial range is set at 75m.
+=======
+
+Range FFT (1st FFT)
+
+CRITERIA
+MEETS SPECIFICATIONS
+Implement the Range FFT on the Beat or Mixed Signal and plot the result.
+
+A correct implementation should generate a peak at the correct range, i.e the
+initial position of target assigned with an error margin of +/- 10 meters.
+
+=======
+Answer:
+fft result is shown in 1D (1st row of the data) and 2D surface plot was implemented. A peak can be seen in both 1D and 2D plot.
+=======
+
+2D CFAR
+
+CRITERIA
+MEETS SPECIFICATIONS
+Implement the 2D CFAR process on the output of 2D FFT operation, i.e the Range Doppler Map.
+
+The 2D CFAR processing should be able to suppress the noise and separate
+the target signal. The output should match the image shared in walkthrough.
+
+Create a CFAR README File
+
+In a README file, write brief explanations for the following:
+
+Implementation steps for the 2D CFAR process.
+Selection of Training, Guard cells and offset.
+Steps taken to suppress the non-thresholded cells at the edges.
+
+=======
+Answer:
+2D CFAR was implemented following the prompts with following parameters: 3 doppler training cells and 10 range training cells, 2 guard cells for both dimensions. Offset of 5 dB to construct the threshold. For each iteration CUT cell, we take the noise level as the average value of the db2pow(signal) around it's training cells. I further added the noise level with the offset. After comparing the signal value with the calculated threshold, ones that bigger than threshold was normalized to 1, otherwise 0. 
+
+Additionally, by initializing a 2D matrix with zeros everywhere, we removed the noise that are around the edge of the RDM matrix. Finally, the plot should be generated for the result after CFAR.
+=======
